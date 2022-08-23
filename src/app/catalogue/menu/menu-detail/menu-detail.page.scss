@@ -1,0 +1,29 @@
+ion-toolbar
+{
+    --background: #02142F;
+    --color:white;
+}
+ion-icon
+{
+    cursor: pointer;
+}
+ion-card
+{
+    cursor: pointer;
+    transition : 0.5s ease-in-out;
+}
+.addToCart
+{
+    background-color: #02142F;
+    border: none;
+    color: white;
+    padding: 1em 1.5em;
+    border: 1px solid #02142F;
+    border-radius: 1rem;
+    transition: 0.5s ease-in-out;
+}
+.addToCart:hover
+{
+    background-color: white;
+    color: #02142F;
+}

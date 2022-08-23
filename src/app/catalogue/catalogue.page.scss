@@ -1,0 +1,14 @@
+ion-toolbar
+{
+    --background: #02142F;
+    --color:white;
+}
+ion-card
+{
+    cursor: pointer;
+    transition : 0.5s ease-in-out;
+}
+ion-card:hover
+{
+    box-shadow: 0 0px 40px 0 #B0C1D9;
+}

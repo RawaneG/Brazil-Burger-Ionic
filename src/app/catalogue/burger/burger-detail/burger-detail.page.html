@@ -1,0 +1,35 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-icon name="caret-back-outline" routerLink="/catalogue"></ion-icon>
+      <ion-title class="text-center">{{monBurger.nom}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div class="parent justify-content-center align-items-center">
+      <div class="left text-center">
+        <h1>{{monBurger.nom | titlecase}}</h1>
+        <div class="text-align-justify">
+          <span>
+            Ici se trouve la description de votre produit.Ici se trouve la
+            description de votre produit
+          </span>
+          <span>
+            Ici se trouve la description de votre produit. Ici se trouve la
+            description de votre produit
+          </span>
+        </div>
+        <button class="my-4 addToCart">Ajouter au Panier</button>
+      </div>
+      <div
+        class="right d-flex flex-column align-items-center justify-content-evenly"
+      >
+        <img
+          src="{{'data:image/png;base64,' + monBurger.image}}"
+          alt="produit-image"
+        />
+        <h2>{{monBurger.prix}} FCFA</h2>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>

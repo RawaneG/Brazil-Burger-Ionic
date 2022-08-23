@@ -1,0 +1,36 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title class="text-center">Catalogue</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-card
+      *ngFor="let burger of mesBurgers"
+      [routerLink]="['/burger-detail', burger.id]"
+    >
+      <ion-img
+        src="{{'data:image/png;base64,' + burger.image}}"
+        [alt]="burger.nom"
+      ></ion-img>
+      <ion-card-subtitle class="text-center">{{burger.nom}}</ion-card-subtitle>
+      <ion-card-subtitle class="text-center"
+        >{{burger.prix}} FCFA</ion-card-subtitle
+      >
+    </ion-card>
+    <ion-card
+      *ngFor="let menu of mesMenus"
+      [routerLink]="['/menu-detail', menu.id]"
+    >
+      <ion-img
+        src="{{'data:image/png;base64,' + menu.image}}"
+        [alt]="menu.nom"
+      ></ion-img>
+      <ion-card-subtitle class="text-center">{{menu.nom}}</ion-card-subtitle>
+      <ion-card-subtitle class="text-center"
+        >{{menu.prix}} FCFA</ion-card-subtitle
+      >
+    </ion-card>
+  </ion-content>
+</ion-app>
