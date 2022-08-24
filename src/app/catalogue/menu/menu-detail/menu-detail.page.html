@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-icon name="caret-back-outline" routerLink="/catalogue"></ion-icon>
-    <ion-title>{{monMenu.nom}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="catalogue"></ion-back-button>
+    </ion-buttons>
+    <ion-title slot="start">{{monMenu.nom}}</ion-title>
   </ion-toolbar>
 </ion-header>
 

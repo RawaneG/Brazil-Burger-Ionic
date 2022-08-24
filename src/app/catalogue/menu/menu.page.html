@@ -1,9 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>menu</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<ion-card>
+  <ion-img
+    src="{{'data:image/png;base64,' + monMenu.image}}"
+    [alt]="monMenu.nom"
+  ></ion-img>
+  <ion-card-subtitle class="text-center">{{monMenu.nom}}</ion-card-subtitle>
+  <ion-card-subtitle class="text-center"
+    >{{monMenu.prix}} FCFA</ion-card-subtitle
+  >
+  <div class="card-buttons">
+    <button>
+      <i class="fas fa-shopping-cart"></i>
+    </button>
+    <button [routerLink]="['/menu', monMenu.id]">
+      <i class="fas fa-eye"></i>
+    </button>
+  </div>
+</ion-card>

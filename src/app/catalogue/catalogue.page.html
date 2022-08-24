@@ -1,36 +1,59 @@
 <ion-app>
-  <ion-header>
+  <ion-header
+    parallax
+    imageUrl="https://i.pinimg.com/originals/d5/6b/1a/d56b1a9ef0ec82db3ac57022c3a2dd2d.jpg"
+    height="600"
+    bgPosition="center"
+  >
     <ion-toolbar>
-      <ion-title class="text-center">Catalogue</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="sidemenu"></ion-back-button>
+      </ion-buttons>
+      <ion-title slot="start">Catalogue</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-content class="ion-padding">
-    <ion-card
-      *ngFor="let burger of mesBurgers"
-      [routerLink]="['/burger-detail', burger.id]"
-    >
-      <ion-img
-        src="{{'data:image/png;base64,' + burger.image}}"
-        [alt]="burger.nom"
-      ></ion-img>
-      <ion-card-subtitle class="text-center">{{burger.nom}}</ion-card-subtitle>
-      <ion-card-subtitle class="text-center"
-        >{{burger.prix}} FCFA</ion-card-subtitle
-      >
-    </ion-card>
-    <ion-card
-      *ngFor="let menu of mesMenus"
-      [routerLink]="['/menu-detail', menu.id]"
-    >
-      <ion-img
-        src="{{'data:image/png;base64,' + menu.image}}"
-        [alt]="menu.nom"
-      ></ion-img>
-      <ion-card-subtitle class="text-center">{{menu.nom}}</ion-card-subtitle>
-      <ion-card-subtitle class="text-center"
-        >{{menu.prix}} FCFA</ion-card-subtitle
-      >
-    </ion-card>
+  <ion-content>
+    <!-- Segment -->
+    <ion-segment (ionChange)="segmentChanged($event)" class="my-5">
+      <ion-segment-button value="card">
+        <ion-icon name="grid-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="list">
+        <ion-icon name="list-outline"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+    <!-- Card des Burgers -->
+    <div *ngIf="card == true">
+      <h1 class="text-center">Mes Burgers</h1>
+      <app-burger
+        *ngFor="let burger of mesBurgers"
+        [monBurger]="burger"
+        [routerLink]="['/burger-detail', burger.id]"
+      ></app-burger>
+      <!-- Card des Menus -->
+      <h1 class="text-center">Mes Menus</h1>
+      <app-menu
+        *ngFor="let menu of mesMenus"
+        [monMenu]="menu"
+        [routerLink]="['/menu-detail', menu.id]"
+      ></app-menu>
+    </div>
+    <div *ngIf="liste == true">
+      <h1 class="text-center">Mes Burgers</h1>
+      <!-- Liste des Burgers -->
+      <app-list-burger
+        *ngFor="let burger of mesBurgers"
+        [monListBurger]="burger"
+        [routerLink]="['/burger-detail',
+      burger.id]"
+      ></app-list-burger>
+      <!-- Liste des Menus -->
+      <h1 class="text-center">Mes Menus</h1>
+      <app-list-menu
+        *ngFor="let menu of mesMenus"
+        [monListMenu]="menu"
+        [routerLink]="['/menu-detail', menu.id]"
+      ></app-list-menu>
+    </div>
   </ion-content>
 </ion-app>

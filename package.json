@@ -15,12 +15,17 @@
   "dependencies": {
     "@angular/common": "^14.0.0",
     "@angular/core": "^14.0.0",
+    "@angular/flex-layout": "^2.0.0-beta.10-4905443",
     "@angular/forms": "^14.0.0",
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "@auth0/angular-jwt": "^5.0.2",
     "@ionic/angular": "^6.1.9",
+    "@ionic/storage": "2.0.0",
+    "ionic-header-parallax": "^3.1.0",
     "rxjs": "~6.6.0",
+    "swiper": "^8.3.2",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },

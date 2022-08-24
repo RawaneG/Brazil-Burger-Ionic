@@ -1,8 +1,10 @@
 <ion-app>
   <ion-header>
     <ion-toolbar>
-      <ion-icon name="caret-back-outline" routerLink="/catalogue"></ion-icon>
-      <ion-title class="text-center">{{monBurger.nom}}</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="catalogue"></ion-back-button>
+      </ion-buttons>
+      <ion-title slot="start">{{monBurger.nom}}</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>

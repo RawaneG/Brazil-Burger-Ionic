@@ -1,0 +1,19 @@
+<ion-list>
+  <ion-item class="d-flex justify-content-between">
+    <ion-avatar slot="start"
+      ><img
+        src="{{'data:image/png;base64,' + monListBurger.image}}"
+        alt="menu.nom"
+      />
+    </ion-avatar>
+    <ion-label>
+      <h3>{{monListBurger.nom}}</h3>
+      <p>{{monListBurger.prix}} FCFA</p>
+    </ion-label>
+    <ion-icon
+      name="chevron-forward-outline"
+      class="flesh"
+      [routerLink]="['/burger-detail', monListBurger.id]"
+    ></ion-icon>
+  </ion-item>
+</ion-list>

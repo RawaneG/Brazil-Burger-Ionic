@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-catalogue',
@@ -10,8 +11,35 @@ export class CataloguePage implements OnInit
 {
   mesBurgers: any;
   mesMenus: any;
+  liste : boolean = false;
+  card : boolean = true;
 
-  constructor(private httpService : HttpService) { }
+  constructor(private httpService : HttpService,private loadingCtrl : LoadingController) { }
+
+  async showMessage()
+  {
+  const loading = await this.loadingCtrl.create(
+  {
+    duration: 1000,
+    spinner: 'dots',
+    cssClass : 'custom-loading'
+  });
+
+  loading.present();
+  }
+  segmentChanged(event : any)
+  {
+    if(event.detail.value == 'list')
+    {
+      this.liste = true;
+      this.card = false;
+    }
+    else
+    {
+      this.liste = false;
+      this.card = true;
+    }
+  }
 
   convertion(image : any)
   {

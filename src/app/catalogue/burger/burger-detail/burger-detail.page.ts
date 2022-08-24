@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
 import { HttpService } from '../../../http.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { HttpService } from '../../../http.service';
 })
 export class BurgerDetailPage implements OnInit
 {
+  spinner = true;
   quantiteActuelle = 0;
   beureukh : number = 0;
   monBurger : any = [];
@@ -17,7 +19,7 @@ export class BurgerDetailPage implements OnInit
   ajoutee !: any;
   mesBoissons : any;
 
-  constructor(private sanitaire : DomSanitizer, private route : ActivatedRoute, private router : Router, private httpService : HttpService)
+  constructor(private loadingCtrl : LoadingController,private sanitaire : DomSanitizer, private route : ActivatedRoute, private router : Router, private httpService : HttpService)
   {
 
   }
@@ -25,6 +27,7 @@ export class BurgerDetailPage implements OnInit
   {
     this.httpService.convertion(image);
   }
+
   ngOnInit()
   {
     this.route.paramMap.subscribe(a =>

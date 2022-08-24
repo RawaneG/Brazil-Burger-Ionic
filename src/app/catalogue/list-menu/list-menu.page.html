@@ -1,0 +1,19 @@
+<ion-list>
+  <ion-item>
+    <ion-avatar slot="start"
+      ><img
+        src="{{'data:image/png;base64,' + monListMenu.image}}"
+        alt="menu.nom"
+      />
+    </ion-avatar>
+    <ion-label>
+      <h3>{{monListMenu.nom}}</h3>
+      <p>{{monListMenu.prix}} FCFA</p>
+    </ion-label>
+    <ion-icon
+      name="chevron-forward-outline"
+      class="flesh"
+      [routerLink]="['/menu-detail', monListMenu.id]"
+    ></ion-icon>
+  </ion-item>
+</ion-list>

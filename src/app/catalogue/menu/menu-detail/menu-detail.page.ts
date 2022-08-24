@@ -21,6 +21,7 @@ export class MenuDetailPage implements OnInit
   monMenu : any = [];
   parameter !: any;
   ajoutee !: any;
+
   @Input() mesBoissons !: any;
 
   message(event : any)
