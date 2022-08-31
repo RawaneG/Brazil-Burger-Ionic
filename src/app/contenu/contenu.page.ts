@@ -9,7 +9,9 @@ export class ContenuPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit()
+  {
+
   }
 
 }

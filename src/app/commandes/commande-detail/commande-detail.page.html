@@ -1,0 +1,60 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button
+          defaultHref="commandes"
+          slot="start"
+          color="dark"
+        ></ion-back-button>
+      </ion-buttons>
+      <ion-title>Détail de la commande</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <h1 class="text-center">Commande {{maCommande?.id}}</h1>
+    <ion-list>
+      <ion-item-sliding>
+        <ion-item>
+          <ion-label>
+            <p>Nom complet :</p>
+            <p>Téléphone :</p>
+            <p>Zone de livraison :</p>
+            <p>Prix Total :</p>
+          </ion-label>
+          <ion-label>
+            <p>
+              <strong
+                >{{maCommande?.client?.prenom | titlecase}}
+                {{maCommande?.client?.nom | titlecase}}</strong
+              >
+            </p>
+            <p>
+              <strong>{{maCommande?.client?.telephone}}</strong>
+            </p>
+            <p>
+              <strong>{{maCommande?.zone?.nom}}</strong>
+            </p>
+            <p>
+              <strong>{{maCommande?.prix}} FCFA</strong>
+            </p>
+          </ion-label>
+        </ion-item>
+        <ion-item-options side="end" *ngIf="maCommande?.etat !== 'Livré'">
+          <ion-item-option color="dark" (click)="scan(maCommande)"
+            >Valider par Scan</ion-item-option
+          >
+          <ion-item-option (click)="code(maCommande)"
+            >Valider par code</ion-item-option
+          >
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    <ion-list class="text-center" *ngIf="codeQr === true">
+      <p class="text-center">
+        Veuillez Scanner cette image pour obtenir votre code
+      </p>
+      <qrcode [qrdata]="scanCode"></qrcode>
+    </ion-list>
+  </ion-content>
+</ion-app>

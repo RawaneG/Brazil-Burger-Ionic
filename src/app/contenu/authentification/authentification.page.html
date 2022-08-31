@@ -1,1 +1,22 @@
-<ion-content> Connexion </ion-content>
+<form [formGroup]="myForm" (ngSubmit)="login()">
+  <ion-img
+    src="https://burgerkingfrance.twic.pics/img/products/0/e5/0e55066a-c68f-4839-9136-dbaf9d9d48df_?twic=v1/contain=700x700"
+  ></ion-img>
+  <h1>Connexion</h1>
+  <ion-item>
+    <ion-input
+      type="text"
+      placeholder="Email"
+      formControlName="username"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input
+      type="password"
+      placeholder="Mot de Passe"
+      formControlName="password"
+    ></ion-input>
+  </ion-item>
+  <button class="btn btn-primary ion-margin">Connexion</button>
+</form>
+<span routerLink="/catalogue">Se diriger vers le catalogue</span>

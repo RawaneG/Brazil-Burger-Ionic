@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { LoadingController } from '@ionic/angular';
+import { SecurityService } from '../security.service';
 
 @Component({
   selector: 'app-catalogue',
@@ -13,8 +14,9 @@ export class CataloguePage implements OnInit
   mesMenus: any;
   liste : boolean = false;
   card : boolean = true;
+  role: any;
 
-  constructor(private httpService : HttpService,private loadingCtrl : LoadingController) { }
+  constructor(private securite : SecurityService,private httpService : HttpService,private loadingCtrl : LoadingController) { }
 
   async showMessage()
   {

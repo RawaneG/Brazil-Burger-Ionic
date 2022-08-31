@@ -11,7 +11,6 @@ import { BurgerPage } from './burger/burger.page';
 import { IonicHeaderParallaxModule } from 'ionic-header-parallax';
 import { MenuPageModule } from './menu/menu.module';
 import { BurgerPageModule } from './burger/burger.module';
-import { SidemenuPage } from '../contenu/sidemenu/sidemenu.page';
 
 @NgModule({
   imports: [
@@ -21,7 +20,7 @@ import { SidemenuPage } from '../contenu/sidemenu/sidemenu.page';
     CataloguePageRoutingModule,
     IonicHeaderParallaxModule
   ],
-  declarations: [CataloguePage,MenuPage,BurgerPage,ListBurgerPage,ListMenuPage,SidemenuPage],
-  exports:[MenuPage,BurgerPage,ListBurgerPage,ListMenuPage,SidemenuPage]
+  declarations: [CataloguePage,MenuPage,BurgerPage,ListBurgerPage,ListMenuPage],
+  exports:[MenuPage,BurgerPage,ListBurgerPage,ListMenuPage]
 })
 export class CataloguePageModule {}

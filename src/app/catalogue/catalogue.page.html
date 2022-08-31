@@ -5,9 +5,22 @@
     height="600"
     bgPosition="center"
   >
-    <ion-toolbar>
+    <ion-toolbar translucent>
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="sidemenu"></ion-back-button>
+        <ion-back-button
+          defaultHref="contenu"
+          slot="start"
+          color="light"
+        ></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-menu-button color="light">
+          <ion-icon
+            name="fast-food-outline"
+            size="large"
+            class="burger"
+          ></ion-icon>
+        </ion-menu-button>
       </ion-buttons>
       <ion-title slot="start">Catalogue</ion-title>
     </ion-toolbar>

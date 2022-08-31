@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SidemenuPage } from './sidemenu.page';
+import { LivraisonDetailPage } from './livraison-detail.page';
 
-describe('SidemenuPage', () => {
-  let component: SidemenuPage;
-  let fixture: ComponentFixture<SidemenuPage>;
+describe('LivraisonDetailPage', () => {
+  let component: LivraisonDetailPage;
+  let fixture: ComponentFixture<LivraisonDetailPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidemenuPage ],
+      declarations: [ LivraisonDetailPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SidemenuPage);
+    fixture = TestBed.createComponent(LivraisonDetailPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
